@@ -1,7 +1,7 @@
 library(tidyverse)
 library(RSQLite)
 library(RMySQL)
-#
+library(data.table)
 rm(cbike)
 rm(ptm)
 rm(ptm1)
@@ -10,7 +10,6 @@ rm(cbike)
 rm(ptm)
 rm(ptm1)
 rm(ptn2)
-# library(data.table)
 ptm1 <-proc.time()
 cbike <-dir("data",full.names=T) %>% map_df(data.table::fread)
 proc.time() - ptm1
